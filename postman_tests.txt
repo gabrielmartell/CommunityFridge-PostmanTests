@@ -1,0 +1,123 @@
+EACH TEST CONDUCTED FOR SUCCESS.
+
+//----------------------------------------
+✔️ - Tested 
+GET FRIDGES:
+    GET: http://localhost:8000/fridges 
+    -> HEADER: Cotent-Type, application/json
+
+//----------------------------------------
+✔️ - Tested 
+GET SPECIFIC FRIDGE:
+    GET: http://localhost:8000/fridges/fg-#
+
+//----------------------------------------
+✔️ - Tested 
+POST FRIDGE:
+    POST: http://localhost:8000/fridges
+v RAW BODY v
+
+{
+    "name": "Test Fridge",
+    "can_accept_items": 5,
+    "contact_person": "Gabriel",
+    "contact_phone": "Martell",
+    "address": {
+        "street": "Test Street",
+        "postalCode": "Test Postal",
+        "city": "Test City",
+        "province": "Test Province",
+        "country": "Test Country"
+    },
+    "accepted_types": [1, 2]
+}
+
+//----------------------------------------
+✔️ - Tested 
+PUT FRIDGE:
+    PUT: http://localhost:8000/fridges/fg-4
+v RAW BODY v
+
+{
+    "name": "Test Fridge",
+    "numItemsAccepted": 3,
+    "can_accept_items": 10,
+    "contact_person": "Gabriel",
+    "contact_phone": "Martell",
+    "address": {
+        "street": "Test Street",
+        "postalCode": "Test Postal",
+        "city": "Test City",
+        "province": "Test Province",
+        "country": "Test Country"
+    },
+    "accepted_types": [1, 2]
+}
+
+//----------------------------------------
+✔️ - Tested 
+POST ITEM TO FRIDGE:
+    POST: http://localhost:8000/fridges/fg-4/items
+v RAW BODY v
+
+{
+    "id": "2",
+    "quantity": 1
+}
+
+- Adds (1) salted butter.
+
+//----------------------------------------
+✔️ - Tested 
+DELETE ITEM FROM FRIDGE:
+    DELETE: http://localhost:8000/fridges/fg-4/items/2
+
+//----------------------------------------
+✔️ - Tested 
+
+ADD THE FOLLOWING (INDIVIDUALLY) FOR TESTING (THROUGH POST: http://localhost:8000/fridges/fg-4/items)
+{
+    "id": "1",
+    "quantity": 1
+}
+{
+    "id": "2",
+    "quantity": 1
+}
+
+DELETE ITEMS FROM FRIDGE:
+    DELETE: http://localhost:8000/fridges/fg-4/items? (DELETES ALL)
+    DELETE: http://localhost:8000/fridges/fg-4/items?item=1&item=2 (DELETES ALL; THE SPECIFICALLY ADDED ONES)
+    DELETE: http://localhost:8000/fridges/fg-4/items?item=1 (DELETES A SPECIFIC ENTRY; IN THIS CASE, 1)
+
+//----------------------------------------
+✔️ - Tested 
+ADD THE FOLLOWING FOR TESTING (THROUGH POST: http://localhost:8000/fridges/fg-4/items)
+{
+    "id": "2",
+    "quantity": 1
+}
+
+ADD TO QUANTITY IN ITEM
+    PUT: http://localhost:8000/fridges/fg-4/items/2 
+v RAW BODY v
+{
+    "id": "2",
+    "quantity": 10
+}
+
+//----------------------------------------
+✔️ - Tested 
+ADD ITEM TO ITEM COLLECTION
+    POST: http://localhost:8000/items
+
+v RAW BODY v
+{
+    "name": "Pickle!",
+    "type":"2",
+}
+
+//----------------------------------------
+✔️ - Tested 
+FIND ITEM BASED OFF TYPE AND NAME
+    GET: http://localhost:8000/search/items?type=dairy&name=milk
