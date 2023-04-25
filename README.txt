@@ -1,6 +1,12 @@
 Name: Gabriel Martell
 Student ID: 101191857
 
+--------------------------------------------------
+*2023/04/25
+I'm writing this just as a warning that I did do this two years ago. Things might lack efficiency or simplicity, but it worked.
+The grade I achieved on this assignment was 100%. This README will be a combination of all assignments prior to this, with a total of 4.
+--------------------------------------------------
+
 CONTAINS:
 This zip file contains config.js, fridge-router.js and server.js, which reflect the assignment the most.
 The "models" folder are also prominent to this program, containing all the nesscecary Mongoose schemes for the Mongo Database.
