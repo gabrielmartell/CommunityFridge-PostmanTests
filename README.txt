@@ -3,7 +3,7 @@ Student ID: 101191857
 
 --------------------------------------------------
 *2023/04/25
-I'm writing this just as a warning that I did do this two years ago. Things might lack efficiency or simplicity, but it worked.
+I'm writing this just as a warning that I did do this a while ago (Assignment was finished and submitted around April 2022). Things might lack efficiency or simplicity, but it worked.
 The grade I achieved on this assignment was 100%. This README will be a combination of all assignments prior to this, with a total of 4.
 --------------------------------------------------
 
